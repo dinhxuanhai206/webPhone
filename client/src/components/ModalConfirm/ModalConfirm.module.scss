@@ -1,0 +1,170 @@
+@import '../../styles/app.scss';
+
+.modal-confirm {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	overflow: auto;
+	z-index: 9999;
+	.content {
+		position: relative;
+		margin: auto;
+		max-width: 450px;
+		width: 100%;
+		background: #fff;
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		border-radius: 5px;
+		overflow: hidden;
+		animation: fade 0.5s forwards;
+		.wrapper {
+			font-family: 'DM Sans', sans-serif;
+		}
+
+		.head {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 10px 20px;
+			background: #f8f8f8;
+			span {
+				font-size: 20px;
+				font-weight: 600;
+				line-height: 26px;
+			}
+
+			svg {
+				font-size: 30px;
+			}
+		}
+
+		.body {
+			padding: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			gap: 20px;
+			.icon {
+				svg {
+					font-size: 50px;
+				}
+
+				.question {
+					color: #1e9fff;
+				}
+
+				.warning {
+					color: #eec046;
+				}
+
+				.error {
+					color: #e85445;
+				}
+
+				.success {
+					color: #3bdb85;
+				}
+			}
+
+			.message {
+				font-size: 18px;
+				line-height: 24px;
+				font-weight: 500;
+			}
+		}
+
+		.foot {
+			padding: 10px 20px 20px 20px;
+			display: flex;
+			align-items: center;
+			gap: 20px;
+			justify-content: flex-end;
+            
+			button {
+				width: 100px;
+				height: 40px;
+				border-radius: 3px;
+				font-size: 16px;
+				font-weight: 500;
+				line-height: 24px;
+				transition: all 0.3s;
+
+				&:active {
+					opacity: 0.7;
+				}
+
+				@include tablet {
+					min-width: 100px;
+					width: 100%;
+				}
+
+				@include mobile {
+					min-width: 100px;
+					width: 100%;
+				}
+			}
+
+			.yes-success {
+				background: #3bdb85 !important;
+			}
+
+			.no-success {
+				border-color: #3bdb85 !important;
+				color: #3bdb85 !important;
+			}
+
+			.isClose {
+				background: #3bdb85 !important;
+				color: #fff !important;
+			}
+
+			.yes-control,
+			.close-control {
+				background: #1e9fff;
+				color: #fff;
+			}
+
+			.yes-control {
+				&:hover,
+				&:active {
+					opacity: 0.6;
+				}
+			}
+
+			.no-warning {
+				background: #1e9fff !important;
+				color: #fff;
+				&:hover,
+				&:active {
+					opacity: 0.7;
+				}
+			}
+
+			.no-control {
+				background: #fff;
+				color: #1e9fff;
+				border: 1px solid #1e9fff;
+				&:hover,
+				&:active {
+					background: #1e9fff;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+
+@keyframes fade {
+	0% {
+		transform: scale(0);
+	}
+	50% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}

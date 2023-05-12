@@ -1,0 +1,15 @@
+.container{
+	max-width: 1280px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 30px;
+	transition: all .3s;
+
+	@include tablet{
+		padding: 0 35px;
+	}
+
+	@include mobile{
+		padding: 0 15px;
+	}
+}

@@ -1,0 +1,34 @@
+@import '../Login/Login.module.scss';
+
+.register{
+    position: relative;
+	// overflow: hidden;
+	font-family: 'DM Sans', sans-serif;
+
+	.form-submit{
+		margin: 5% auto;
+		max-width: 550px;
+	}
+
+	.submit-btn{
+
+		margin: 0 auto;
+	}
+
+	.form-wrap{
+		display: flex;
+		align-items: flex-start;
+		gap: 15px;
+
+		.form-group{
+			flex: 1;
+		}
+	}
+}
+
+.wrapper__intro {
+	background: url('../../assets/bg-image-register.jpg') no-repeat;
+    background-position: center;
+	background-size: cover;
+
+}

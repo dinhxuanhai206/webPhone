@@ -1,0 +1,270 @@
+@import '../../styles/app.scss';
+
+// ========================== SERVICE ======================= //
+.service-area {
+	position: relative;
+	padding-top: 30px;
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 2px;
+		width: 100%;
+		background: #f6f7fb;
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 2px;
+		left: 0;
+		height: 2px;
+		width: 100%;
+		background: #f6f7fb;
+	}
+}
+
+.wrap-service {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.service-box {
+	width: 25%;
+	padding: 0 15px;
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 30px;
+
+	.icon {
+		max-width: 45px;
+		margin-right: 20px;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.content {
+		flex: 1;
+
+		.title {
+			font-size: 16px;
+			font-weight: 700;
+			line-height: 1.7;
+		}
+
+		.desc {
+			color: var(--color-body);
+			font-weight: 400;
+			line-height: 1.7;
+		}
+	}
+
+	@include desktop {
+		width: 50%;
+	}
+
+    @include mobile{
+        width: 100%;
+        padding: 0;
+    }
+}
+// ========================== FOOTER WIDGET ======================= //
+.footer-top {
+	padding: 30px 0;
+}
+
+.wrap-footer {
+	display: flex;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+.footer-widget {
+	width: 25%;
+	padding: 0 15px;
+
+    @include tablet{
+        width: 50%;
+    }
+
+    @include mobile{
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+}
+
+.footer-widget__title {
+	font-size: 18px;
+	font-weight: 600;
+	margin-bottom: 20px;
+	line-height: 1.5;
+	letter-spacing: 0.5px;
+}
+
+.footer-widget__inner {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+
+    li{
+        margin-bottom: 12px;
+    }
+
+	a,
+	p {
+		color: var(--color-body);
+		font-size: 16px;
+		font-weight: 500;
+	}
+
+	a {
+		position: relative;
+		display: inline-block;
+
+		&::after {
+			content: '';
+			height: 2px;
+			width: 0;
+			background-color: #333;
+			position: absolute;
+			bottom: -2px;
+			right: 0;
+			opacity: 0;
+			transition: 0.5s;
+		}
+
+		&:hover {
+			&::after {
+				width: 100%;
+				opacity: 1;
+				left: 0;
+			}
+		}
+	}
+
+    p > span{
+        padding-left: 12px;
+    }
+}
+
+// ========================== COPYRIGHT ======================= //
+.copyright-area {
+	position: relative;
+	padding: 15px 0;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 2px;
+		width: 100%;
+		background: #f6f7fb;
+	}
+}
+
+.wrap-copyright {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+    @include mobile{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.copyright-box {
+	width: 33.33%;
+	padding: 0 15px;
+
+    @include mobile{
+        width: 100%;
+    }
+}
+
+.social-media {
+	display: flex;
+	align-items: center;
+
+	a {
+		font-size: 16px;
+		color: var(--color-body);
+		margin: 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		transition: 0.3s;
+		z-index: 1;
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 35px;
+			height: 35px;
+			background: var(--color-secondary);
+			border-radius: 50%;
+			z-index: -1;
+			transform: scale(0);
+			transition: 0.3s;
+		}
+
+		&:hover {
+			color: #fff;
+
+			&::after {
+				transform: scale(1);
+			}
+		}
+	}
+
+    @include mobile{
+        justify-content: center;
+    }
+}
+
+.descritpions {
+	padding: 15px;
+	position: relative;
+	color: var(--color-body);
+	font-weight: 500;
+	font-size: 14px;
+    text-align: center;
+}
+
+.accept-for {
+	display: flex;
+	align-items: center;
+	span {
+		color: var(--color-body);
+		font-size: 14px;
+		font-weight: 500;
+		display: inline-block;
+		margin: 10px 20px;
+		letter-spacing: -0.025em;
+	}
+
+	ul {
+		display: flex;
+		align-items: center;
+
+        @include mobile{
+            flex: 1;
+            justify-content: center;
+        }
+	}
+
+	li {
+		position: relative;
+		padding: 10px;
+	}
+}

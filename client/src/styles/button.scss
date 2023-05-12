@@ -1,0 +1,36 @@
+@mixin button-style($background: #3577f0, $color: #fff, $borderRadius: 6px, $border: transparent) {
+	background: $background;
+	color: $color;
+	display: inline-block;
+	border-radius: $borderRadius;
+	transition: all 0.3s ease-in-out;
+	z-index: 1;
+	position: relative;
+
+	&:hover {
+		&:before {
+			transform: scale(1.1);
+			background: $background;
+		}
+	}
+
+	&:before {
+		content: '';
+		height: 100%;
+		width: 100%;
+		border-radius: $borderRadius;
+		position: absolute;
+		background: $background;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: -1;
+		transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+		border: $border;
+	}
+
+	&:active {
+		opacity: 0.5;
+	}
+}
